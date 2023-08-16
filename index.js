@@ -5,15 +5,31 @@ const path = require('path');
 const questions = require('./lib/questions.js');
 const shapes = require('./lib/shapes.js');
 
+//file creating function
+const generateFile = (svgFileData) => {
+    let filePath = path.resolve(`${__dirname}/new_shape_file`, 'new_file.svg')
+    fs.writeFile(filePath, svgFileData, err => {
+        if (err) throw err;
+        console.log('New SVG file created 👍')
+    })
+}
 
-let runInquirer = () => {
+//inquirer function. also calls the file creator function
+const runInquirer = () => {
     inquirer.prompt(
         questions.array 
     )
     .then((answers) => {
         console.log(answers);
-        shapes.generateShape(answers.shape.name);
+        generateFile(
+            shapes.generateShape(answers)//svgfiledata
+        ); 
+
     })
+    // .then((shapeDataText) => {
+    //     console.log(shapeDataText);
+    //     // generateFile(shapeDataText);
+    // })
     .catch((error) => {
         if (error.isTtyError) {
           console.log('Can\'t be rendered');
@@ -22,6 +38,9 @@ let runInquirer = () => {
         }
       })
 }
+
+
+
 
 
 //initiate application
