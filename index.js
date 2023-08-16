@@ -3,6 +3,7 @@ const inquirer = require('inquirer');
 const generateMarkdown = require('./lib/shapes.js');
 const path = require('path');
 const questions = require('./lib/questions.js');
+const shapes = require('./lib/shapes.js');
 
 
 let runInquirer = () => {
@@ -11,6 +12,7 @@ let runInquirer = () => {
     )
     .then((answers) => {
         console.log(answers);
+        shapes.generateShape(answers.shape.name);
     })
     .catch((error) => {
         if (error.isTtyError) {
