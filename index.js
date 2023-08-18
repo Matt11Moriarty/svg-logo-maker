@@ -22,10 +22,12 @@ const runInquirer = () => {
     .then((answers) => {
         console.log(answers);
         generateFile(
-            shapes.generateShape(answers)//svgfiledata
+            // shapes.generateShape(answers)
+            shapes.generateNewShape(answers)
         ); 
 
     })
+    //ASK DOMINIQUE ABOUT ADDING ANOTHER .then -> Can it be done?
     // .then((shapeDataText) => {
     //     console.log(shapeDataText);
     //     // generateFile(shapeDataText);
