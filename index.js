@@ -1,6 +1,5 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
-const generateMarkdown = require('./lib/shapes.js');
 const path = require('path');
 const questions = require('./lib/questions.js');
 const shapes = require('./lib/shapes.js');
@@ -22,16 +21,10 @@ const runInquirer = () => {
     .then((answers) => {
         console.log(answers);
         generateFile(
-            // shapes.generateShape(answers)
             shapes.generateNewShape(answers)
         ); 
 
     })
-    //ASK DOMINIQUE ABOUT ADDING ANOTHER .then -> Can it be done?
-    // .then((shapeDataText) => {
-    //     console.log(shapeDataText);
-    //     // generateFile(shapeDataText);
-    // })
     .catch((error) => {
         if (error.isTtyError) {
           console.log('Can\'t be rendered');
@@ -40,9 +33,6 @@ const runInquirer = () => {
         }
       })
 }
-
-
-
 
 
 //initiate application
