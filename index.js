@@ -7,10 +7,10 @@ const shapes = require('./lib/shapes.js');
 
 //file creating function
 const generateFile = (svgFileData) => {
-    let filePath = path.resolve(`${__dirname}/new_shape_file`, 'new_file.svg')
+    let filePath = path.resolve(`${__dirname}/new_shape_file`, 'logo.svg')
     fs.writeFile(filePath, svgFileData, err => {
         if (err) throw err;
-        console.log('New SVG file created 👍')
+        console.log('Generated logo.svg')
     })
 }
 
