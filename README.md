@@ -21,7 +21,7 @@ In building this application, I was able to get very familiar with NPM packages 
 
 ## Usage
 
-Video Recording: 
+Video Recording: https://drive.google.com/file/d/1BiM1tuJTU3yAk5ipMj7AbGJ5NvtlMz98/view
 
 1. Clone the code to your local machine
 2. Run `npm i` in an integrated terminal to install the necessary node modules
