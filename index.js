@@ -19,7 +19,6 @@ const runInquirer = () => {
         questions.array 
     )
     .then((answers) => {
-        console.log(answers);
         generateFile(
             shapes.generateNewShape(answers)
         ); 
